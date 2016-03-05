@@ -55,7 +55,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         calculate = new javax.swing.JButton();
         plot = new javax.swing.JButton();
-        applyChart = new javax.swing.JButton();
         mod = new javax.swing.JTextField();
         pha = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -144,8 +143,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        applyChart.setText("Apply");
-
         mod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modActionPerformed(evt);
@@ -209,8 +206,7 @@ public class Menu extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
-                                    .addComponent(jLabel8)
-                                    .addComponent(applyChart))
+                                    .addComponent(jLabel8))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(real, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
@@ -239,9 +235,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(iVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tog, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(applyChart, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -331,7 +325,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_comboActionPerformed
 
     private void plotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotActionPerformed
-        // TODO add your handling code here:
+              //  d.vswr = (d.width/2)*Float.parseFloat(vswr.getText());
+               d.vswr = (d.width/2)*(1+ord.ir2x((float)4.265,0)); 
+                d.repaint();
     }//GEN-LAST:event_plotActionPerformed
 
     private void calculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateActionPerformed
@@ -400,7 +396,6 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Zo;
-    private javax.swing.JButton applyChart;
     private javax.swing.JButton calculate;
     private javax.swing.JComboBox combo;
     private javax.swing.JTextField iVal;

@@ -15,11 +15,14 @@ public class DrawChart extends Frame
     int height = sh.sHeight;
     int width = sh.sWidth;
     int cx = width;int cy = height/2;
+    float vswr = 0;
     public void paint(Graphics g) 
     {
      Graphics2D gd = (Graphics2D)g;
 
      gd.setPaint(Color.BLACK);
+     //Draw constant r circles
+      int cx = width;int cy = height/2;r = 0;
      for (double i =1;i <10;i=i+0.5)
      {
         x = cx-r/2;
@@ -31,8 +34,10 @@ public class DrawChart extends Frame
      gd.setPaint(Color.RED);
      x = width/2;y=height/4;r=width/2;
      gd.drawOval(x,y,r,r);
-     cx = width;cy=height/2;r=0; 
+   
      gd.setPaint(Color.BLACK);
+     //Draw constant i circles +ve axis
+     cx = width;cy=height/2;r=0; 
      for (int i =1;i <12;i=i+1)
      {
         x = cx-r/2;
@@ -42,7 +47,8 @@ public class DrawChart extends Frame
         r = 2*(height/2-cy);
      }
     cx = width;cy=height/2;r=0; 
-     for (int i =1;i <12;i=i+1)
+    //Draw constant i circles -ve axis 
+    for (int i =1;i <12;i=i+1)
      {
         x = cx-r/2;
         y = cy-r/2;
@@ -51,6 +57,7 @@ public class DrawChart extends Frame
         r = 2*(cy-height/2);
      }
      gd.setPaint(Color.lightGray);
+     //Erase outside unit circle
      for(int x =0;x<width;x++)
          for(int y =0;y<height;y++)
          {
@@ -64,6 +71,9 @@ public class DrawChart extends Frame
      x = 0;y=0;r=width;
      gd.drawOval(x,y,r,r);
      gd.drawLine(0,height/2 , width, height/2);
+     System.out.println(vswr);
+     gd.setPaint(Color.blue);
+     gd.drawOval(width-(int)vswr,height-(int)vswr,2*((int)vswr-(width/2)),2*((int)vswr-(width/2)));
      
      }
 }
