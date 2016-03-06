@@ -16,6 +16,7 @@ public class DrawChart extends Frame
     int width = sh.sWidth;
     int cx = width;int cy = height/2;
     float vswr = 0;
+    float zinX=0,zinY=0;
     public void paint(Graphics g) 
     {
      Graphics2D gd = (Graphics2D)g;
@@ -74,6 +75,8 @@ public class DrawChart extends Frame
      System.out.println(vswr);
      gd.setPaint(Color.blue);
      gd.drawOval(width-(int)vswr,height-(int)vswr,2*((int)vswr-(width/2)),2*((int)vswr-(width/2)));
-     
+     gd.setPaint(Color.BLUE);
+     gd.drawOval((int)zinX-5,(int)zinY-5,10,10);
+    // gd.drawOval(100,300,10,10);
      }
 }

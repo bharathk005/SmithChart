@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.text.DecimalFormat;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -67,26 +68,27 @@ public class Menu extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        z1 = new javax.swing.JTextField();
+        z2 = new javax.swing.JTextField();
+        z3 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox();
         jComboBox2 = new javax.swing.JComboBox();
         jComboBox3 = new javax.swing.JComboBox();
         jLabel14 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        lr = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        li = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        freq = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        zinr = new javax.swing.JTextField();
         zin_calc = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        zini = new javax.swing.JTextField();
         zin_plot = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -213,13 +215,18 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel13.setText("Z3 =");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        z1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                z1ActionPerformed(evt);
             }
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "R (ohm)", "L (nH)", "C (nF)" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "R (ohm)", "L (nH)", "C (nF)" }));
 
@@ -227,9 +234,9 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel14.setText("LOAD =");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        lr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                lrActionPerformed(evt);
             }
         });
 
@@ -237,17 +244,17 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel16.setText("+j");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        li.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                liActionPerformed(evt);
             }
         });
 
         jLabel17.setText("Freq. =");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        freq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                freqActionPerformed(evt);
             }
         });
 
@@ -255,16 +262,21 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel20.setText("Zin = ");
 
-        jTextField7.setOpaque(false);
+        zinr.setOpaque(false);
 
         zin_calc.setText("Calculate");
+        zin_calc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zin_calcActionPerformed(evt);
+            }
+        });
 
         jLabel21.setText("+j");
 
-        jTextField8.setOpaque(false);
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        zini.setOpaque(false);
+        zini.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                ziniActionPerformed(evt);
             }
         });
 
@@ -274,6 +286,8 @@ public class Menu extends javax.swing.JFrame {
                 zin_plotActionPerformed(evt);
             }
         });
+
+        jLabel22.setText("with Z0 = 50 ohms");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -348,15 +362,25 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField3))
+                                    .addComponent(z1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                    .addComponent(z2)
+                                    .addComponent(z3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(101, 101, 101)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lr, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(li, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel15)))
+                        .addGap(101, 101, 101)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(zin_plot)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -364,24 +388,17 @@ public class Menu extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(jLabel20)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(zinr, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel15))))
+                                .addComponent(zini, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel22)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel17)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(freq, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel18)))
                 .addContainerGap(11, Short.MAX_VALUE))
@@ -435,35 +452,36 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(z1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(zin_calc))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(z2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(zinr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(zini, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(z3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(zin_plot))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(jLabel15)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(li, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(freq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
@@ -521,7 +539,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void plotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotActionPerformed
               //  d.vswr = (d.width/2)*Float.parseFloat(vswr.getText());
-               d.vswr = (d.width/2)*(1+ord.ir2x((float)4.265,0)); 
+               d.vswr = (d.width/2)*(1+ord.ir2x(Float.parseFloat(vswr.getText()),0)); 
                 d.repaint();
     }//GEN-LAST:event_plotActionPerformed
 
@@ -556,29 +574,108 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_vswrActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void z1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_z1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_z1ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void lrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lrActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_lrActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void liActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_liActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void freqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freqActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_freqActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void ziniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ziniActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_ziniActionPerformed
 
     private void zin_plotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zin_plotActionPerformed
-        // TODO add your handling code here:
+                    float Zinr = Float.parseFloat(zinr.getText())/50;
+                    float Zini = Float.parseFloat(zini.getText())/50;
+                    d.zinX = (1+ord.ir2x(Zinr, Zini))*ord.width/2;
+                    d.zinY = (1-ord.ir2y(Zinr, Zini))*ord.height/2;
+                    d.repaint();
+                    
     }//GEN-LAST:event_zin_plotActionPerformed
+
+    private void zin_calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zin_calcActionPerformed
+                    float Z1 = Float.parseFloat(z1.getText());
+                    float Z2 = Float.parseFloat(z2.getText());
+                    float Z3 = Float.parseFloat(z3.getText());
+                    float Lr = Float.parseFloat(lr.getText());
+                    float Li = Float.parseFloat(li.getText());
+                    float f = Float.parseFloat(freq.getText());
+                    float w = (float)(2*Math.PI*f*1000);
+                    float Zinr =0,Zini=0;
+                    //For Z3
+                    if(jComboBox3.getSelectedItem().equals("R (ohm)"))
+                    {
+                        Zinr = Lr + Z3;
+                        Zini = Li;
+                    }
+                    else if(jComboBox3.getSelectedItem().equals("L (nH)"))
+                    {
+                        Zini = Li + (float)(w*Z3*Math.pow(10,-9));
+                        Zinr = Lr;
+                    }
+                    else if(jComboBox3.getSelectedItem().equals("C (nF)"))
+                    {
+                        Zini = Li - (float)(1/(w*Z3*Math.pow(10,-9)));
+                        Zinr = Lr;
+                        
+                    }
+                    //for Z2
+                    
+                    float mr = (float)(Zinr/(Math.pow(Zinr,2)+Math.pow(Zini,2)));
+                    float mi = (float)(Zini/(Math.pow(Zinr,2)+Math.pow(Zini,2)));
+                    float kr=0,ki=0;
+                    if(jComboBox2.getSelectedItem().equals("R (ohm)"))
+                    {
+                        kr = mr + (1/Z2);
+                        ki = -mi;
+                    }
+                    else if(jComboBox2.getSelectedItem().equals("L (nH)"))
+                    {
+                       kr = mr;
+                       ki = -(mi + (float)(1/(w*Z2*Math.pow(10,-9))));
+                    }
+                    else if(jComboBox2.getSelectedItem().equals("C (nF)"))
+                    {
+                       kr = mr;
+                       ki = -(mi - (float)(w*Z2*Math.pow(10,-9))); 
+                    }
+                    Zinr = (float)(kr/(Math.pow(kr,2)+Math.pow(ki,2)));
+                    Zini = (float)(-ki/(Math.pow(ki,2)+Math.pow(ki,2)));
+                    
+                    //for Z1
+                    if(jComboBox1.getSelectedItem().equals("R (ohm)"))
+                    {
+                        Zinr += Z1;
+                    }
+                    else if(jComboBox1.getSelectedItem().equals("L (nH)"))
+                    {
+                        Zini += (float)(w*Z1*Math.pow(10,-9));
+                    }
+                    else if(jComboBox1.getSelectedItem().equals("C (nF)"))
+                    {
+                        Zini -= (float)(1/(w*Z1*Math.pow(10,-9)));
+                        
+                    }
+                  
+                    Zinr = Float.parseFloat(String.format("%.2f",Zinr));
+                    Zini = Float.parseFloat(String.format("%.2f",Zini));
+                    zinr.setText(String.valueOf(Zinr));
+                    zini.setText(String.valueOf(Zini));
+    }//GEN-LAST:event_zin_calcActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -621,6 +718,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField Zo;
     private javax.swing.JButton calculate;
     private javax.swing.JComboBox combo;
+    private javax.swing.JTextField freq;
     private javax.swing.JTextField iVal;
     private javax.swing.JTextField imag;
     private javax.swing.JComboBox jComboBox1;
@@ -641,6 +739,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -651,14 +750,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField li;
+    private javax.swing.JTextField lr;
     private javax.swing.JTextField mod;
     private javax.swing.JTextField pha;
     private javax.swing.JButton plot;
@@ -666,8 +759,13 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField real;
     private javax.swing.JRadioButton tog;
     private javax.swing.JTextField vswr;
+    private javax.swing.JTextField z1;
+    private javax.swing.JTextField z2;
+    private javax.swing.JTextField z3;
     private javax.swing.JButton zin_calc;
     private javax.swing.JButton zin_plot;
+    private javax.swing.JTextField zini;
+    private javax.swing.JTextField zinr;
     // End of variables declaration//GEN-END:variables
 
 
