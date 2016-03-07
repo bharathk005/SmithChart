@@ -26,6 +26,7 @@ public class SmithChart
 //       d.setBackground(Color.lightGray);
 //       d.setVisible(true);
        Menu disp = new Menu();
+       disp.setTitle("The Smith chart MENU");
        disp.show();
 //       
 //       while(true)
