@@ -702,7 +702,7 @@ public class Menu extends javax.swing.JFrame {
                    
                     d.addWindowListener(new WindowAdapter(){public void windowClosing(WindowEvent we){System.exit(0);}});
                     d.setSize(sm.sWidth,sm.sHeight);
-                    d.setBackground(Color.lightGray);
+                    d.setBackground(Color.yellow);
                     d.setLocation(520,10);
                     d.setResizable(false);
                     d.setTitle("Impedance Chart");

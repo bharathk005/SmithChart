@@ -57,7 +57,7 @@ public class DrawChart extends Frame
         cy = cy + (int)Math.pow(2,i);
         r = 2*(cy-height/2);
      }
-     gd.setPaint(Color.lightGray);
+     gd.setPaint(Color.YELLOW);
      //Erase outside unit circle
      for(int x =0;x<width;x++)
          for(int y =0;y<height;y++)
@@ -76,7 +76,7 @@ public class DrawChart extends Frame
      gd.setPaint(Color.blue);
      gd.drawOval(width-(int)vswr,height-(int)vswr,2*((int)vswr-(width/2)),2*((int)vswr-(width/2)));
      gd.setPaint(Color.BLUE);
-     gd.drawOval((int)zinX-5,(int)zinY-5,10,10);
+     gd.fillOval((int)zinX-5,(int)zinY-5,10,10);
     // gd.drawOval(100,300,10,10);
      }
 }
